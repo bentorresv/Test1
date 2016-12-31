@@ -1,0 +1,149 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Check"
+    android:animateLayoutChanges="true">
+
+    <Chronometer
+        android:id="@+id/cr_work_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/layout_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="15"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/icon"/>
+
+        <TextView
+            android:text="@string/hello_world"
+            android:layout_width="0dp"
+            android:layout_weight="65"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:id="@+id/tv_hour" />
+
+        <ImageButton
+            android:id="@+id/iv_settings"
+            android:layout_width="0dp"
+            android:layout_weight="20"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_action_overflow"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/layout_action_bar"/>
+
+    <LinearLayout
+        android:id="@+id/layout_target_hours"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_below="@id/tv_bottom_line"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/layout_target_hours"
+        android:visibility="visible">
+
+        <ImageButton
+            android:id="@+id/iv_less_target"
+            android:layout_width="0dp"
+            android:layout_weight="20"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_action_previous_item"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <TextView
+            android:id="@+id/tv_target"
+            android:text="@string/hello_world"
+            android:layout_width="0dp"
+            android:layout_weight="60"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/iv_more_target"
+            android:layout_width="0dp"
+            android:layout_weight="20"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_action_next_item"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_check_action"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/layout_target_hours"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_elapsed_time"
+            android:layout_width="0dp"
+            android:layout_weight="40"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:text="00:00"/>
+
+        <ImageButton
+            android:src="@drawable/ic_action_play"
+            android:layout_width="0dp"
+            android:layout_weight="20"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_play"
+            android:scaleType="fitCenter"
+            style="?android:attr/buttonBarButtonStyle"/>
+
+        <TextView
+            android:id="@+id/tv_remaining_time"
+            android:layout_width="0dp"
+            android:layout_weight="40"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:text="00:00"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pb_time_elasped"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_check_action"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:progressDrawable="@drawable/custom_progress_bar"
+        style="@android:style/Widget.ProgressBar.Horizontal"/>
+
+    <ListView
+        android:id="@+id/lv_checklog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pb_time_elasped"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+    </ListView>
+
+</RelativeLayout>
